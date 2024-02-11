@@ -1,14 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    int num1, num2;
+int main(int argc, char *argv[]) {
 
-    // Prompt the user for input
-    printf("Enter the first number: ");
-    scanf("%d", &num1);
+    if (argc != 3 || atoi(argv[1]) == 0 || atoi(argv[2]) == 0)
+    {
+        printf("Incorrect Command Line Arguments.\n");
+        return 0;
+    }
 
-    printf("Enter the second number: ");
-    scanf("%d", &num2);
+    int num1;
+    int num2;
+    num1 = atoi(argv[1]);
+    num2 = atoi(argv[2]);
 
     // Calculate and print the sum
     int sum = num1 + num2;
